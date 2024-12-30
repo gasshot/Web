@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+</head>
+<body>
+    <table border = "1px solid black" width = 400>
+        <tr bgcolor = "grey">
+
+            <th colspan="2" height = " 50" >Step 1 : 아이디 / 비번 입력
+            </th>
+        </tr>
+        <tr bgcolor = "whitesmoke">
+            <th align="middle">아이디</th>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <th  align="middle">비밀번호</th>
+            <td><input  type="password"></td>
+        </tr>
+        <tr >
+            <th align="middle">비밀번호 확인</th>
+            <td><input type="password"></td>
+        </tr>
+        <tr bgcolor = "grey">
+            <th colspan="2" height = " 50">Step 2 : 개인정보
+            </th>
+            <tr bgcolor = "whitesmoke">
+                <th align="middle">성별</th>
+                <td>남<input type="radio" name="gender" value="man">
+                    여<input type="radio" name="gender" value="woman">
+                </td>
+
+            </tr>
+            <tr bgcolor = "whitesmoke">
+                <th align="middle">혈핵형</th>
+                <td><select name="" id="">
+                    <option value="">A형</option>
+                    <option value="">B형</option>
+                    <option value="">O형</option>
+                    <option value="">AB형</option>
+                </select>  </td>
+            </tr>
+            <tr bgcolor = "whitesmoke">
+                <th align="middle">생일</th>
+                <td ><input type="date"></td>
+            </tr>
+            <tr bgcolor = "grey">
+                <th colspan="2" height = " 50">Step 3 : 선호도
+                </th>
+    
+            </tr>
+            <tr bgcolor = "whitesmoke">
+                <th align="middle">취미</th>
+                <td>        
+                    축구 <input type="checkbox" name="menu" value="soccer">
+                    야구 <input type="checkbox" name="menu" value="baseball">
+                    농구 <input type="checkbox" name="menu" value="basketball">
+                </td>
+            </tr>
+            <tr bgcolor = "whitesmoke">
+                <th  align="middle">좋아하는 색깔</th>
+                <td><input type="color"></td>
+            </tr>
+        </tr>
+        <tr bgcolor = "grey">
+            <th colspan="2" height = " 50">Step 4 : 하고 싶은 말
+            </th>
+
+        </tr>
+        <tr bgcolor = "whitesmoke">
+            <td  colspan = "2" align="middle" > <textarea cols="56" rows="5"></textarea>
+            </td>
+        </tr>
+        <tr align="middle">
+            <td bgcolor = "whitesmoke" colspan = "3" >
+                <input type="submit" value="제출">
+                <input type="reset">
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

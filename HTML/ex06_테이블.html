@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06_테이블</title>
+</head>
+<body>
+    <!-- (1) 테이블을 만들겠다고 선언하는 공간 : table -->
+     <table border="1px solid black">
+        <!-- 표의 제목 : caption -->
+        <caption>메뉴판</caption>
+
+        <!-- (2) 테이블의 한 줄(행)을 생성하는 방법 : tr -->
+         <tr bgcolor = "lightblue">
+            <!-- colspan : 병합 기능(좌, 우 병합 -> 열병합) -->
+            <th colspan="2">메뉴</th>
+            <!-- (3) 표의 헤더 부분을 작성할 때 사용 
+            글자가 굵어지고 가운데 정렬 
+            -->
+         </tr>
+         <tr>
+            <td>아메리카노</td>
+            <td rowspan="2">35000000</td>
+            <!-- rowspan : 병합 기능(위, 아래 병합 -> 행병합) -->
+         </tr>
+         <tr>
+            <td>카페라떼</td>
+         </tr>
+
+         <br><br><br><br><br><br><br><br><br><br>
+     </table>
+
+     <h1>실습</h1>
+     <table border="1px solid black">
+        <tr bgcolor = "pink">
+            <th>이름</th>
+            <th colspan="2">성별/주소</th>
+            <th >비고</th>
+        </tr>
+        <tr>
+            <td>양상권</td>
+            <td>남자</td>
+            <td>광주</td>
+            <td rowspan="3">집에 가고 싶어</td>
+        </tr>
+        <tr>
+            <td>임다이</td>
+            <td>여자</td>
+            <td>광주</td>
+
+        </tr>
+        <tr>
+            <td>강규남</td>
+            <td>남자</td>
+            <td>광주</td>
+        </tr>
+
+
+
+     </table>
+
+    <ul></ul>
+</body>
+</html>
