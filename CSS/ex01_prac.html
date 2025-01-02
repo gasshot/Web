@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* CSS를 담당하는 태그 => style태그 
+            요소의 디자인을 진행!
+                - 무엇을 '선택자를 통해'
+
+        선택자{속성 : 값}
+            */
+        h2 {
+            color: orange;
+        }
+
+        /*  font-weight : 폰트의 굵기 => 100 ~ 900숫자 사용 bold(700) 
+            font-size : 폰트 크기 => px단위로 조정
+            font-family : 폰트의 종류
+            font-style : 폰트 스타일
+        */
+        /* p {
+            font-size: 40px;
+            font-weight: 900;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        } */
+
+        @font-face {
+            font-family: 'CookieRun-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: red;">빨강색</h1> <!-- 인라인 방식으로 색상을 변경  -->
+
+    <h2>주황색</h2>
+    <p>오늘은 새해 첫 날입니다.</p> <!-- **문단(paragraph)**을 정의할 때 사용 -->
+
+</body>
+
+</html>
