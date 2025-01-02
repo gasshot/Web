@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03_계층선택자</title>
+    <style>
+        /* (1) 자손 선택자 : 사용기호(띄어쓰기) */
+        /* 1-1 div를 기준으로 자손인 span의 색 변경 */
+        div span {
+            color: tomato;
+            font-family: 'CookieRun-Regular';
+        }
+
+        div li {
+            color: blue;
+
+        }
+
+        /* (2) 자식 선택자 : 사용기호(>) */
+        /* ol을 기준으로 자식인 span의 색 변경 */
+        ol>span {
+            color: red;
+        }
+
+        /* (3) 근접후행(형제) 선택자 : 사용기호(+) */
+        /* 첫번째 li를 기준으로 근접해서 붙어있는 li의 색 변경 */
+        li+li {
+            color: chartreuse;
+        }
+
+        /* (4) 후행(형제) 선택자 : 사용기호(~) */
+        li~li {
+            color: blueviolet;
+        }
+        li:first-child{
+            color: aqua;
+        }
+        li:last-child{
+            color: cadetblue;
+        }
+        li:nth-child(2)~li{
+            color: blue;
+        }
+        /* 첫번째 li를 기준으로 근접해서 붙어있는 li의 색 변경 */
+    </style>
+</head>
+
+<body>
+    <div>
+        <strong>반 규칙</strong>
+        <ol>
+            <!-- 4개의 자식요소 -->
+            <li>지각하지 않기!</li>
+            <li>결석하지 않기!</li>
+            <span>연락받기!</span>
+            <li>복습하기!</li>
+        </ol>
+    </div>
+</body>
+
+</html>

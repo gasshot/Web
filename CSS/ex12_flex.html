@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Flex :  레이아웃 배치 전용 기능 
+        - 부모요소 : container
+        - 자식요소 : item*/
+
+        /* 부모요소 */
+        .container {
+            background-color: whitesmoke;
+            height: 500px;
+            /* (1) flex 설정 
+            가로로 자동의 정렬*/
+            display: flex;
+
+            /* (2-1) 배치 방향 설정
+            메인축(main axis)
+            서브축(cross axis) */
+
+            /* (2-2) 배치 방향 설정 -column
+            메인축(main axis) :  세로로 정렬
+            서브축(cross axis) :  가로로 정렬 */
+
+            /* (3) 메인축 기준으로 아이템 정렬 방식 */
+            justify-content: center;
+
+            /* (4) 서브축 기준으로 아이템 정렬 방식 */
+            align-items: center;
+        }
+
+        .item {
+            background-color: lightskyblue;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+
+            flex-basis: 15%;
+        }
+
+        #center{
+            flex-basis: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item" id="center"></div>
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>

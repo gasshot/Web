@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05_폰트크기</title>
+    <style>
+        /* id가 span1이면 # */
+        #span1 {
+            font-size: 10px;
+        }
+
+        p {
+            font-size: 10px;
+        }
+
+        /* em : 부모요소의 크기를 기준으로 하는 상대배수 단위 */
+        #span2 {
+            /* p태그가 10포인트이니까 2배가 되서 20포인트 */
+            font-size: 2em;
+        }
+
+        /* rem : 현재 문서의 폰트 크기에 따른 상대배수 단위
+                 현재 문서 폰트 크기의 2배 
+        */
+        #span3 {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="span1">px로 조정</span>
+    <p>
+        <span id="span2">em으로 조정</span>
+    </p>
+    <br>
+    <span id="span3">rem으로 조정</span>
+
+</body>
+
+</html>

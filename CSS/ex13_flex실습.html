@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .container {
+            background-color: whitesmoke;
+            height: 100px;
+            display: flex;
+            align-items: center;
+
+        }
+        a{
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+            margin: 20px;
+        }
+        .box1{
+            /* border: 1px solid black; */
+            flex-basis: 25%;
+
+        }
+        .box2{
+            /* border: 1px solid black; */
+            flex-basis: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box3{
+            /* border: 1px solid black; */
+            /* flex-basis: 25%; */
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        #menu:hover{
+            background-color: black;
+            color: white;
+        }
+        #best:hover{
+            background-color: black;
+            color: white;
+        }
+        #news:hover{
+            background-color: black;
+            color: white;
+        }
+        #login:hover{
+            background-color: black;
+            color: white;
+        }
+        #submit:hover{
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">
+            <h1>SMHRD</h1>
+        </div>
+        <div class="box2">
+            <a href="#" id="menu"><b>메뉴</b></a>
+            <a href="#" id="best"><b>베스트</b></a>
+            <a href="#" id= "news"><b>뉴스</b></a>
+        </div>
+        <div class="box3">
+            <a href="#" id="login"><b>로그인</b></a>
+            <a href="#" id="submit"><b>회원가입</b></a>
+        </div>
+    </div>
+</body>
+</html>

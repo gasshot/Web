@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 그룹선택자: 사용기호(,) */
+        /* p,
+        span {
+            width: 200px;
+            height: 200px;
+
+        } */
+
+        /* (1) display : block
+            종류 : p, table, div... => 기본 값 block
+            무조건 가로로 한줄의 영역을 차지하는 속성 */
+        /* p {
+            background-color: pink;
+        } */
+        /* (2) display : inline
+            종류 :  span, a, strong... => 기본 값 inline*/
+        /* span {
+            background-color: lightblue;
+        } */
+        .question:hover {
+
+            color: red;
+        }
+
+        .question:hover+.answer {
+
+            display: inline
+        }
+
+        .answer {
+            color: blue;
+            display: none;
+        }
+
+        /* 질문 위에 마우스를 올리면, 
+        질문 옆에 있는 답이 보이게 해줄것*/
+    </style>
+</head>
+
+<body>
+    <p>p태그</p>
+    <p>p태그</p>
+
+    <span>span태그</span>
+    <span>span태그</span>
+
+    <h3>display : none</h3>
+    <span class="question">Q. 내가 좋아하는 음료는?</span>
+    <span class="answer">A. 아이스아메리카노, 카페라테</span>
+    <br>
+    <span class="question">Q. 오늘의 수업 과목은?</span>
+    <span class="answer">A. HTML/CSS</span>
+</body>
+
+</html>
