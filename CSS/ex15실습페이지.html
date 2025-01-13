@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex15실습페이지</title>
+    <style>
+        /* 기본 스타일 */
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: #fafafa;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* 헤더영역 */
+        #header {
+            background-color: #fafafa;
+            padding: 10px 20px;
+            /* 요소의 그림자 추가하는 속성
+            첫 번째 값 (x-offset) : 그림자의 수평 이동 거리
+            두 번째 값 (y-offset) : 그림자의 수직 이동 거리
+            세 번째 값 (blur-radius) : 그림자의 흐릿함 정도
+            네 번째 값 (색상) : 그림자의 색상과 투명도
+            rgba(0, 0, 0, 0.1)은 검정색(rgb 0 0 0)에 투명도 10% 적용 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #header>a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* 피드 영역 */
+        #feed {
+            display: flex;
+            /* flex-wrap : wrap >> 요소가 한 줄에 다들어가지 않을 경우에 다음 줄로 넘김 */
+            flex-wrap: wrap;
+            /* 요소들 사이에 공간 확보 */
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        /* 피드 카드 스타일 */
+        .post {
+            width: 300px;
+            background-color: #fafafa;
+            border-radius: 10px;
+            /* 요소의 크기를 벗어난 콘텐츠를 화면에 보이지 않도록 숨김 */
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post>img {
+            width: 100%;
+            height: 300px;
+            /* 미디어 파일이 부모요소의 크기와 비율에 맞게 조정되며
+            비율은 유지한 채로 요소를 완전히 채우도록 설정 */
+            object-fit: cover;
+        }
+
+        .post>.content {
+            font-family: 'establishRetrosansOTF';
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        .post>.content>h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .post>.content>p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .post>.content>.like {
+            font-size: 16px;
+            color: #e1306c;
+            /* 요소 위에 마우스 커서를 올릴 때의 모양을 변경하는 속성 */
+            cursor: pointer;
+        }
+
+        /* 마우스 오버 효과 */
+        .post:hover {
+            /* 마우스를 올렸을 때 요소를 변형
+            원래크기의 1.05배 증가 > 5퍼 */
+            transform: scale(1.05);
+            /* transform : 애니메이션 효과를 적용할 속성(대상)
+            0.3 s: 애니메이션이 실행되는 시간 
+            ease-in-out : 애니메이션의 시작, 끝 속도 조절*/
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* 사이드바 영역 */
+        #sidebar {
+            position: fixed;
+            right: 20px;
+            top: 80px;
+            width: 90px;
+            background-color: #fafafa;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 15px 10px;
+        }
+
+        #sidebar>a {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #333;
+            text-decoration: none;
+            /* text-align : 텍스트(컨텐츠)의 정렬을 수평으로 중앙 배치 */
+            text-align: center;
+        }
+
+        #sidebar>a:hover {
+            color: #e1306c;
+        }
+
+        /* 푸터 영역 */
+        #footer {
+            background-color: #fafafa;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        @font-face {
+            font-family: 'establishRetrosansOTF';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRetrosansOTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 헤더영역 -->
+    <div id="header">
+        <a href="#">Instagram</a>
+        <a href="#">게시물</a>
+    </div>
+
+    <!-- 피드영역 -->
+    <div id="feed">
+        <!-- 포스트1 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZArKU4ky3CagGFN0AIKqGSFpH7V8F8EsLtg&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>조개</h3>
+                <p>조끼입은 개</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트2 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy5GCHR8sQUWTRrc_REWKnRtTUjJmSFxudhQ&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>시골잡종(kid)</h3>
+                <p>시골잡종</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트3 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXPiJkImw0OASmmqWSR84DYTOqB8VwR5n9BQ&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>시골잡종(adult)</h3>
+                <p>시골잡종</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트4 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdxCQg9oOOUcITdvWooMaSFCtr6E4_tcjwFw&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>시골잡종들(kids)</h3>
+                <p>시골잡종들</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트5 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb1mh54s77ABga4aqt85pxYYJ6sPCWPWySaA&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>시골잡종2(adult)</h3>
+                <p>시골잡종2</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트6 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZArKU4ky3CagGFN0AIKqGSFpH7V8F8EsLtg&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>조개</h3>
+                <p>조끼입은 개</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트7 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy5GCHR8sQUWTRrc_REWKnRtTUjJmSFxudhQ&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>시골잡종(kid)</h3>
+                <p>시골잡종</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트8 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXPiJkImw0OASmmqWSR84DYTOqB8VwR5n9BQ&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>시골잡종(adult)</h3>
+                <p>시골잡종</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트9 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdxCQg9oOOUcITdvWooMaSFCtr6E4_tcjwFw&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>시골잡종들(kids)</h3>
+                <p>시골잡종들</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+        <!-- 포스트10 -->
+        <div class="post">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb1mh54s77ABga4aqt85pxYYJ6sPCWPWySaA&s"
+                alt="포스트 이미지">
+            <div class="content">
+                <h3>시골잡종2(adult)</h3>
+                <p>시골잡종2</p>
+                <span class="like">💗 좋아요</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 사이드바 영역 -->
+    <div id="sidebar">
+        <a href="#">메뉴</a>
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+        <a href="#">로그아웃</a>
+    </div>
+
+    <!-- 푸터 영역 -->
+    <div id="footer">&copy; 2025 Instagram Clone. All right reserved</div>
+</body>
+
+</html>
