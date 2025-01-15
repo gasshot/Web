@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13_가위바위보</title>
+</head>
+
+<body>
+    <script>
+
+        let mine = prompt('가위, 바위, 보!')
+        let array = ['가위', '바위', '보']
+
+        let com = parseInt(Math.random() * array.length)
+        console.log(com)
+        let str = ''
+        let check = true
+
+/////////////////////////////////////////////////////
+        for (let i = 0; i < array.length; i++) {
+            if(array[i] == mine){
+                check = true
+                break
+            }
+            check = false
+        }
+
+        if (check) {
+            if (mine === array[com]) {
+                str = '결과는 비겼습니다.'
+            }
+            else if ((mine === '가위' && array[com] === '보') || (mine === '바위' && array[com] === '가위') || (mine === '보' && array[com] === '바위')) {
+                str = '결과는 이겼습니다.'
+            }
+            else {
+                str = '결과는 졌습니다.'
+            }
+
+            document.write(`나의 선택 : ${mine} <br> 컴퓨터의 선택 : ${array[com]} <br> ${str}`)
+
+            console.log('나의 선택 :', mine)
+            console.log('컴퓨터의 선택 :', array[com])
+            console.log(str)
+        }
+        else {
+            document.write(`게임오류입니다.`)
+        }
+//////////////////////////////////////////////////////
+
+        // switch (mine) {
+        //     case '가위':
+        //         if (array[com] == '가위') {
+        //             str = '결과는 비겼습니다.'
+        //         }
+        //         else if (array[com] == '바위') {
+        //             str = '결과는 졌습니다.'
+        //         }
+        //         else if (array[com] == '보') {
+        //             str = '결과는 이겼습니다.'
+        //         }
+        //         break
+        //     case '바위':
+        //     if (array[com] == '가위') {
+        //             str = '결과는 이겼습니다.'
+        //         }
+        //         else if (array[com] == '바위') {
+        //             str = '결과는 비겼습니다.'
+        //         }
+        //         else if (array[com] == '보') {
+        //             str = '결과는 졌습니다.'
+        //         }
+        //         break
+        //     case '보':
+        //     if (array[com] == '가위') {
+        //             str = '결과는 졌습니다.'
+        //         }
+        //         else if (array[com] == '바위') {
+        //             str = '결과는 이겼습니다.'
+        //         }
+        //         else if (array[com] == '보') {
+        //             str = '결과는 비겼습니다.'
+        //         }
+        //         break
+        //     default:
+        //         check = false
+        //         break
+        // }
+
+        // if(check){
+
+        //     document.write(`나의 선택 : ${mine} <br> 컴퓨터의 선택 : ${array[com]} <br> ${str}`)
+
+        //     console.log('나의 선택 :', mine)
+        //     console.log('컴퓨터의 선택 :', array[com])
+        //     console.log(str)
+        // }
+        // else{
+        //     document.write(`게임오류입니다.`)
+        // }
+
+
+
+    </script>
+</body>
+
+</html>

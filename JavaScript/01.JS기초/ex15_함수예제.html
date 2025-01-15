@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 두개의 수를 입력받아서 더한 값을 돌려주는 plus라는 함수를 생성 
+        //  - 조건 1: 화살표함수를 이용할 것 
+        //  - 조건 2: 매개변수의 이름은 a,b로 칭할 것 
+
+        // 2. (테스트용) plus라는 함수에 5와 3을 넣어서 호출해보기 => 8이라는 결과 
+        //              console창에 호출 
+
+        // 3. 두개의 수를 입력받아서 뺀 값을 돌려주는 minus라는 함수를 생성 
+        //  - 조건 1: 화살표함수를 이용할 것 
+        //  - 조건 2: 매개변수의 이름은 a,b로 칭할 것 
+        //  - 조건 3: 큰값 - 작은값 
+
+        // 4. (테스트용) minus 함수에 3,5를 넣어서 호출해보기 => 2라는 결과
+        //          console창에 호출 
+
+        // 5. 사용자에게 두개의 숫자를 입력받는다. (num1, num2)
+        //      => 형변환 
+
+        // 6. 사용자에게 기호를 입력받는다 (sign)
+        //     => +,- 
+
+        // 7. 사용자가 입력한 기호가 +라면, plus 함수 호출을 통해 연산
+        // 8. 사용자가 입력한 기호가 -라면, minus 함수 호출을 통해 연산 
+
+        // 결과 값은 문서에 호출 document.write() 
+        //[결과] 연산 결과는 15입니다. 
+        const plus = (a, b) => a + b // 람다식 ==
+        const minus = (a, b) => {
+            let aaa = 0
+            aaa = (a - b) >= 0 ? a - b : b - a
+
+            // if (a > b) {
+            //     aaa = a - b
+            // }
+            // else if (b > a) {
+            //     aaa = b - a
+            // }
+            return aaa
+        }
+
+        let num1 = parseInt(prompt('첫번째 숫자을 입력하세요. > '))
+        let num2 = parseInt(prompt('두번째 숫자을 입력하세요. > '))
+        let sign = prompt('기호를 입력하세요.(+, -) >')
+
+        document.write(`첫번째 숫자 : ${num1}, 두번째 숫자 : ${num2}, 받은 기호 : ${sign}<br>`)
+
+        if (sign === '+') {
+
+            document.write(`[결과] 연산 결과는 ${plus(num1, num2)}입니다.`)
+        }
+        else if (sign === '-') {
+            document.write('마이너스 함수 결과(테스트) : ', minus(num1, num2))
+            document.write(`<br>[결과] 연산 결과는 ${minus(num1, num2)}입니다.`)
+        }
+
+
+
+    </script>
+</body>
+
+</html>
