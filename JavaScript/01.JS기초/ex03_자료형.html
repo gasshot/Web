@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03_자료형</title>
+</head>
+<body>
+    <script>
+        // 자료형
+        // 1. String (문자형)
+        // 큰따옴표(""), 작은따옴표(''), 백틱(``) 전부 사용 가능
+        // 백틱은 Tab키 위에 있다.
+
+        let text = "안녕하세요."
+        console.log('str :', text, typeof(text))
+
+        console.log(`${text} 저는 강인오입니다.`)
+
+        // 2. number (숫자형)
+        let num1 = 3
+        console.log('num1 :', num1, typeof(num1))
+
+        let num2 = 3.14
+        console.log('num2 :', num2, typeof(num2))
+
+        // 3. boolean (논리형)
+        // true 와 false로 이루어짐
+        // 변수 앞에 !를 붙이면 현재 상태의 반대 결과가 출력됨
+        let bool = true
+        console.log('boolean :', bool, !bool, typeof(bool))
+
+        // ** undefined과 null의 구분
+        // 4. undefined : 정의가 되지 않음
+        // 값, 값을 담을 수 있는 공간이 모두 존재하지 않는 상태
+
+        let data
+        console.log('data :', data)
+
+        // 5. null : 값이 비워져있다.
+        // 값은 없으나 값을 담을 수 있는 공간은 존재
+        // 필요에 따라 의도적으로 값을 비워야하는 경우가 있다면 null로 사용
+
+        let money = 3000
+        money = null
+        console.log('null :', money)
+    </script>
+</body>
+</html>

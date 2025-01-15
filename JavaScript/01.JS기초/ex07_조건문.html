@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07_조건문</title>
+</head>
+
+<body>
+    <script>
+        /* JS 조건문 : 특정 조건 만족 시 실행하는 명령의 집합
+            if문이 가장 대표적임
+
+        [Python]
+        
+        if 10>5 :
+            print('10이 더 크다.')
+        elif 조건 :
+            print('실행문')    
+        else :
+            print('10이 더 작다.')
+
+        [JavaScript]
+
+        if 10>5 {
+            console.log('10이 더 크다.')
+        }
+        else if 조건 {
+            console.log('실행문')                
+        }  
+        else {
+            console.log('10이 더 작다.')
+        }
+        
+        
+        */
+
+        let aa = prompt('번호를 눌러주세요.')
+        let str = ''
+
+        if (aa == 1) {
+            str = '요금조회'
+
+        }
+        else if (aa == 2) {
+            str = '요금제 변경'
+        }
+        else if (aa == 0) {
+            str = '상담원 연결'
+
+        }
+        else{
+            str = '없는 번호입니다.'
+        }
+        
+        switch (aa) {
+            case 1:
+            str = '요금조회'
+                break
+            case 2:
+                str = '요금제 변경'
+                break
+            case 0:
+                str = '상담원 연결'
+                break
+            default:
+                str = '없는 번호입니다.'
+                break
+        }
+        alert(str)
+        
+    </script>
+</body>
+
+</html>

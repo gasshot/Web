@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08_조건문실습</title>
+</head>
+<body>
+    <script>
+        // JS if문을 연습해보자!
+        // 독감 검사 프로그램
+        // 1) 사용자에게 독감 검사 여부 확인
+        // Q 독감 검사 하셨나요? => y or n
+
+
+        // 2-1) 사용자가 독감섬사를 했다면 사용자에게 결과 양성/음성 여부를 확인
+        // 양성이신가요? 음성이신가요? (양성, 음성)
+
+        // 3-1) 사용자가 양성이라면 => 팝업창 '집에서 5일간 격리하세요'
+        // 3-2) 사용자가 음성이라면 => 팝업창 '축하드립니다. 조심히 가세요!'
+        // 3-3) 사용자가 그 외의 내용을 기입했다면 => 팝업창 '다시 실행해주세요'
+
+        // 2-2) 사용자가 독감검사를 하지 않았다면 => 팝업창 '독감 검사 후 다시 오세요.'
+        let answer1 = confirm('독감 검사 하셨나요?') // Y or N
+
+
+        if(answer1){ // Y
+            let answer2 = prompt('양성이신가요? 음성이신가요')
+
+            if(answer2 == '양성'){
+                alert('집에서 5일간 격리하세요.')
+            }
+            else if(answer2 == '음성'){
+                alert('축하드립니다. 조심히 가세요!')
+            }
+            else {
+                answer2 = prompt('다시 실행해주세요')
+            }
+        }
+        else{ // N
+            alert('독감 검사 후 다시 오세요.')
+        }
+
+    </script>
+</body>
+</html>

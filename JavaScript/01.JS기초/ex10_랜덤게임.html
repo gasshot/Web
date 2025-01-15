@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10_랜덤게임</title>
+</head>
+<body>
+    <script>
+        // 1~100까지 랜덤한 숫자
+        const ran =  parseInt(Math.random()*100) +1
+
+        console.log('랜덤한 수 >', ran)
+        let answer = null
+        let check = null
+        str = '1~100 중 숫자 하나를 입력하세요'
+
+
+
+        while(true){
+
+            // 무한 루프 방지용
+            //break
+
+
+            answer = prompt(str)
+            check = parseInt(answer)
+            if (check == isNaN){
+                str = '숫자만 입력하세요.'
+                continue
+            }
+            if(check > 100 || check < 0){
+                str = '1~100이라고 빡머갈아.'
+                continue
+            }
+            
+
+            if(answer > ran){
+                str = '입력한 수보다 작은 수입니다.'
+                
+                //alert('입력한 수보다 작은 수입니다.')
+            }
+            else if(answer == ran){
+                alert('정답입니다. 축하합니다! 💘')
+                break
+            }
+            else if(answer == null){
+                alert('반칙')
+                break
+            }
+            else{
+                str = '입력한 수보다 큰은 수입니다.'
+                //alert('입력한 수보다 큰 수입니다.')
+            }
+            console.log('입력한 수 > ', answer ,str)
+        }
+
+    </script>
+</body>
+</html>

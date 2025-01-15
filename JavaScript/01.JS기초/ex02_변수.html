@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>변수</title>
+    <title>ex02_변수</title>
 </head>
 
 <body>
@@ -12,14 +12,63 @@
         // 변수 :  데이터를 담을 공간
         // 기본적으로 JS에서는 'var'라는 변수 키워드를 사용한다.
 
-        var dinner1 = confirm('저녁 드셨나요?')
+        /* 호이스팅 현상
+            - 코드가 실행되기 전, 메모리에 변수나 함수를 미리 저장해둠
+            - 끌어올리기
+            - 스크립트 내에 변수와 함수 선언 순서와 관계 없이 순서가 전부 끌어 올려진 듯한 현상
+            - JS엔진이 먼저 전체 코드를 스캔 후, 미리 기록하기 때문에 선언되기 이전에 사용을 해도 오류가 나지 않게 됨  
 
-        // 2-2) 입력용 질문 prompt : 텍스트 입력 가능
-        //          답변 리턴 타입 : String(문자)
-        var dinner2 = prompt('저녁 메뉴 뭐드실래요?')
+        var기 가지고 있는 지나치게 유연한 단점을 보완하고자 ES6에서 새로운 키워드가 2개 등장
+        => let, const
+        
+        Q. 그럼 let, const를 이용하면 호이스팅 현상이 일어나지 않는 건가요?
+        A. 호이스팅 현상은 늘 일어난다.
+            다만, let과 const를 이용할 때 선언된 변수, 함수는 TDZ(Temporal Death Zone)에 
+            보관해서 선언이 나오기 전까지는 접근을 하지 못하도록 만든 것
+        */
+        // (1) var
+        var num = 3 // 선언
+        var num = 5 // 재선언
+        console.log('var : ' + num)
+        // 재선언이 가능하면 코드 유지보수에 좋지 않음
+
+        // (2) let
+        // console.log('let : ' + num2)
+        // Uncaught ReferenceError: Cannot access 'num2' before initialization
+        // let 키워드를 썼기 때문에 선언 이전에는 사용할 수 없다.
+
+        let num2 = 3 // 선언
 
 
-        console.log(dinner1,dinner2)
+        // let num2 = 5 재선언 불가
+        // SyntaxError: Identifier 'num2' has already been declared
+
+        num2 = 5
+        console.log('let : ' + num2)
+
+        // (3) const
+        // 누군가가 재선언하거나 재할당해서는 안되는 값
+        // ex) 게임회사 만렙, 중요한 공유 key값 ...
+
+        const num3 = 3 // 선언
+        // const num3 = 10 재선언 불가
+
+        // num3 = 10 재할당 불가
+        // Uncaught TypeError: Assignment to constant variable.
+        console.log('const : ' + num3)
+
+        // =================================================================
+        // 실습 QUIZ
+
+        // 1. 사용자에게 이름을 입력받는다.("이름을 입력하세요.")
+        // 2. 사용자에게 좋아하는 노래제목과 가수를 입력받는다.("신청하실 노래 제목과 가수를 입력하세요.")
+        // 3. console창에서 님에 신청하신 노래는 0000-000입니다.
+
+        let aa =  prompt("이름을 입력하세요.")
+        let bb =  prompt("신청하실 노래 제목과 가수를 입력하세요.")
+
+        console.log(aa + '님께서 신청하신 노래는 ' + bb + '입니다.')
+
     </script>
 </body>
 
