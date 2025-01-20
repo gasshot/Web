@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex16_객체</title>
+</head>
+
+<body>
+    <script>
+
+        // 객체 (Object) : 속성과 값으로 구성되어있는 데이터의 집합
+        // 객체는 중괄호({})를 이용한다.
+
+        // 1. 객체 선언
+        let person = {}
+
+        // 2. 객체 할당
+        person = {
+            name: '강인오',
+            fav: 'JS',
+            group: '1조',
+            talk: function () {
+                alert('안녕하세요!')
+            }
+        }
+
+        console.log(person)
+
+        // 3. 객체 내 데이터에 접근하는 방법
+        // Case 1) 객체이름.속성이름
+
+        console.log('이름 :', person.name)
+
+        // Case 2) 객체이름['속성이름']
+        console.log('팀명 :', person['group'])
+
+        // * 함수에 접근? 객체이름.속성이름()
+        person.talk()
+        // 4. 객체 내 데이터 수정하기
+        person.group = '새로운 팀'
+        console.log(person)
+        // 5. 복합 데이터
+        // 배열 안에 객체가 있을 수 있고
+        // ex) 1번 학생의 취미 2개, 2번 학생의 취미 3개...
+
+        // 객체 안에 배열이 있을 수 있다
+        // ex) 주말 박스오피스의 순위 
+        //     1위 하얼빈 신규영화 2위 위키드 기존영화
+
+        // 5-1) 배열 내 객체 넣기
+        let orderList = [
+            {
+                menu: '아메리카노',
+                place: 'here',
+                temp: '아이스',
+                stamp: true
+            }, {
+                menu: '카페라떼',
+                place: 'takeout',
+                temp: '따뜻한',
+                stamp: false
+            }, {
+                menu: '캐모마일',
+                place: 'here',
+                temp: '따뜻한',
+                stamp: true
+            }
+        ]
+        console.log(orderList)
+
+        for (let i = 0; i < orderList.length; i++) {
+            console.log(`주문하신 ${orderList[i].temp} ${orderList[i].menu} 나왔습니다.`)
+        }
+
+        // 5-2) 객체 내 배열 넣기
+        let person2 = {
+            name : '강인오',
+            hobby : ['캠핑','게임','코딩']
+        }
+
+        console.log(person2)
+
+        /* 자료형을 구분해보자.
+        1. 괄호 구분
+            - {} : 객체
+            - [] : 배열
+        2. console로 자료형을 출력 시,
+            - 인덱스 번호로 값 구분 : 배열
+            - 속성 이름으로 값 구분 : 객체
+        3. 객체 안에 접근하고 싶다면?
+            - 객체이름.속성이름
+        4. 배열 안에 접근하고 싶다면?
+            - 배열이름[인덱스번호]
+        5. 배열과 객체는 복합적으로 사용이 가능                
+        */
+    </script>
+</body>
+
+</html>
