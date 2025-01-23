@@ -10,7 +10,7 @@ const plus = (income) => {
     //income = aa.toString() // 2-> '2'
     console.log(`plus ck! 결과는 :${aa}`)
 
-    outcome = 'Like! ❤ ' + aa.toString() //'2'
+    outcome = aa.toString() //'2'
     return outcome
 }
 
@@ -27,11 +27,11 @@ const minus = (income) => {
         bb -= 1 
         //income = bb.toString()
         console.log(`minus ck! 결과는 :${bb}`)
-        outcome = 'Like! ❤ ' + bb.toString()
+        outcome = bb.toString()
     }
     else{
         console.log('minus ck! 0이니까 멈춰')
-        outcome = 'Like! ❤ 0'
+        outcome = '0'
     }
     return outcome
 }
@@ -43,7 +43,7 @@ let btn2 = document.getElementById('minus')
 let btn3 = document.getElementById('reset')
 
 btn1.addEventListener('click', () => {
-    num.innerText = plus(num.innerText[8]) // num.innerText = '2'
+    num.innerText = plus(num.innerText) // num.innerText = '2'
     // let aa = parseInt(h1Tag.innerHTML)
     // aa += 1 
     // h1Tag.innerHTML = aa
@@ -53,12 +53,12 @@ btn1.addEventListener('click', () => {
 
 btn2.addEventListener('click', () => {
     
-    num.innerText = minus(num.innerText[8])
+    num.innerText = minus(num.innerText)
 
 })
 
 btn3.addEventListener('click', () => {
     
-    num.innerText = 'Like! ❤ 0'
+    num.innerText = '0'
 
 })
