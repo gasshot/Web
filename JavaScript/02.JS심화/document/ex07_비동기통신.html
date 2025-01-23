@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">영화가져오기</button>
+    <!-- <button id="">데이터 요청!</button> -->
+
+    <div id="container">
+
+    </div>
+
+    <script src="../js/ex07.js">
+        // 우리는 비동기통신으로 데이터를 가져올 수 있다.
+        // 면접 TIP : API란 무엇인가?
+        // 컴퓨터 프로그램 간에 데이터를 주고 받을 수 있도록 하는 규칙
+
+        // open API : 누구나 사용할 수 있도록 공개되어있는 API
+
+        // * 미션! 영화진흥위원회에서 이번주 주간 박스오피스 결과를 가져와보자. -> 화면에 띄워보자
+
+        let url = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=a857d7b734d71919ed1f7f1a98aa23d6&targetDt=20120101'
+
+        // 영화 가져오기 버튼 클릭시, id가 container인 div에 영화 가져올 곳이라고 띄워주기
+        // DOM , innerText
+
+    </script>
+</body>
+
+</html>
