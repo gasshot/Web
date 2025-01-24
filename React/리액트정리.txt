@@ -1,0 +1,57 @@
+☢ [리액트 프로젝트 생성 방법]
+
+1. 리액트 프로젝트 만들 폴더에서 vscode를 실행.
+2. vscode Toggle panel을 연다
+3 . npx create-react-app 프로젝트이름을 teminal에 입력
+    ex) npx create-react-app project01
+    ** 만약 "PSSecurityException"라는 이름의 보안오류 해결법
+    A. powershell을 관리자 모드로 실행해서 Set-ExecutionPolicy Unrestricted
+    입력해 권한을 변경한다.
+
+
+☢ [리액트 프로젝트 서버 실행 방법]
+
+1. 내가 실행시키고 싶은 react프로젝트가 무엇인지 확인
+    => package.json이 있는 폴더여야함
+2. 1번에서 찾은 프로젝트로 경로를 이동    
+    ex) cd project01
+        cd == change directory 경로이동기능
+3. npm start
+
+☢ [리액트 화면을 꺼버렸다! 어떡하지?]
+    Case 1. 터미널에 입력창이 있다 (서버가 꺼져 있음)
+    => 리액트 프로젝트 폴더 찾아가서 npm start
+    Case 2. 터미널에 입력창이 없다 (서버가 실행되고 있음)
+    => http://localhost:3000 으로 들어가기
+
+
+☢ [에러케이스 정리]
+1. JSX elements must be wrapped ~
+    - return문 안에는 꼭 하나의 부모 요소로 감싸져 있어야한다.
+2. 모든 실행이 2번씩 된다면?
+    - index.js에 React.StrictMode 때문이다.
+    - StrictMode란 잠재적인 문제를 알아내기 위한 도구.
+    - 지워도 무방함.
+3. 'return' out side of function. 
+    - return문이 함수 내부에 있어야하는데 함수 외부에 있어서 오류가 나는 것 
+    - 괄호실수나 함수 구성 문제     
+4. export 'default' was not found in '경로' 
+    - 니가 지금 적어준 그 경로에 그 컴포넌트가 없는데?
+    - 파일을 안 만든 경우     
+    - 파일이림에 오타난 경우     
+    - 파일은 있는데 export를 안한 경우  
+    - expost는 했는데 오타내서 한 경우     
+    - 실수로 파일을 소문자로 만들었다가 대문자로 이름을
+    바꿨는데 리액트 프로젝트가 아직 일시적으로 인지하지 못한 경우
+    - src폴더 안에 components폴더를 만들어야 하는데, 바깥쪽에다 만들어서
+    찾을 수가 없는 경우
+5. 아무 오류 메세지 없이 그냥 화면이 사람짐
+    - return문의 위치에 이상이 있어서 더이상 return을 못하는 경우
+    - 함수 선언문 등에 잘못 포함되어있는지 잘 체크하기
+6. Objects are not valid as a React Child~
+    - 객체를 바로 화면에 출력해버린 경우
+    - props처리 하면서 매개변수 안에 {속성1, 속성2}라고 적지 않는 경우
+7. Module not found : Can`t resolve ~~~ in ~~~
+    - 해당 모듈을 설치해야하는데 설치가 되지 않은 것
+    - 해결 방법 : npm install 모듈이름        
+
