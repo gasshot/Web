@@ -1,3 +1,4 @@
+/* 보드 스타일 */
 .board {
   display: grid;
   grid-template-columns: repeat(11, 80px); /* 11개의 열 */
@@ -9,6 +10,7 @@
   position: relative;                     /* 내부 요소의 절대 위치 기준 */
 }
 
+/* 타일 기본 스타일 */
 .tile {
   display: flex;
   justify-content: center;
@@ -21,21 +23,27 @@
   background-color: lightgray;
 }
 
+/* 도시 타일 스타일 */
 .city {
   background-color: lightblue;
 }
-#nation{
-  padding-top: 11px;
-}
 
+/* 나라 이름 스타일 */
+/* #nation {
+  padding-top: 11px;
+} */
+
+/* 세금 타일 스타일 */
 .tax {
   background-color: rgb(230, 173, 173);
 }
-#construction{
-  align-self: start;
+
+/* 건설 테이블 스타일 */
+#construction {
   font-size: 10px;
 }
 
+/* 주사위 표시 스타일 */
 #diceViewer {
   font-size: 120px;                        /* 주사위 크기 */
   position: absolute;
@@ -45,6 +53,7 @@
   color: red;
 }
 
+/* 주사위 던지기 버튼 스타일 */
 #rollDiceButton {
   position: absolute;
   top: calc(50% + 180px);                  /* 버튼을 주사위 아래로 이동 */
@@ -59,11 +68,11 @@
   cursor: pointer;
 }
 
-
 #rollDiceButton:hover {
   background-color: #45a049;
 }
 
+/* 플레이어 표시 스타일 */
 .player {
   position: absolute;
   z-index: 2; /* 타일 위에 렌더링 */

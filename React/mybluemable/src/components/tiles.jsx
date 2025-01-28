@@ -20,7 +20,7 @@ const tiles = [
   { id: 18, name: "베를린", type: "city", price: 180 },
   { id: 19, name: "몬트리올", type: "city", price: 200},  // 두 번째 특수칸
   { id: 20, name: "사회복지기금", type: "special1", price: 200},  // 다시 시작 지점
-  { id: 21, name: "부에노스아이레스", type: "city", price: 220 },
+  { id: 21, name: "멕시코시티", type: "city", price: 220 },
   { id: 22, name: "황금열쇠", type: "chance"},
   { id: 23, name: "상파울로", type: "city", price: 240 },
   { id: 24, name: "시드니", type: "city", price: 240 },
