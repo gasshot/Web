@@ -1,0 +1,32 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 100px); /* 10개의 열 (가로로 10개 타일) */
+  grid-template-rows: repeat(10, 100px); /* 10개의 행 (세로로 10개 타일) */
+  gap: 5px; /* 타일 간의 간격 */
+  width: 1200px; /* 가로 크기 */
+  height: 1000px; /* 세로 크기 */
+  overflow: auto; /* 화면을 넘는 타일들에 대해 스크롤 기능 추가 */
+}
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 12px;
+  height: 100px;
+  width: 100px;
+  background-color: lightgray;
+}
+
+.city {
+  background-color: lightblue;
+}
+.tax {
+  background-color: rgb(230, 173, 173);
+}
+#diceViewer{
+font-size: 200px;
+}
+
