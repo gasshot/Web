@@ -2,13 +2,19 @@ import React, { useState } from 'react';
 
 const Board = ({ tiles }) => {
   const [diceValue, setDiceValue] = useState(1); // 주사위 값 상태
-  const [playerPositions, setPlayerPositions] = useState([0, 0, 0, 0]); // 4명의 플레이어 위치 상태
+  // const [playerPositions, setPlayerPositions] = useState([0, 0, 0, 0]); // 4명의 플레이어 위치 상태
 
-  // 주사위 굴리기 함수
-  const rollDice = () => {
-    const randomValue = Math.floor(Math.random() * 6) + 1; // 1부터 6까지 랜덤 숫자 생성
-    setDiceValue(randomValue); // 주사위 값을 상태에 저장
-  };
+  // 주사위 굴림 함수 
+  function rollDice() {
+    console.log("rolled Dice!!");
+
+    // 두개 주사위 굴리기
+    let ran1 = Math.floor((Math.random() * 6) + 1);	//1~6
+    let ran2 = Math.floor((Math.random() * 6) + 1);	//1~6
+
+    console.log("현재 현황", ran1, ran2)
+    return setDiceValue(ran1 +ran2);
+  }
 
   // 각 타일의 그리드 위치 계산 함수
   const getTilePosition = (index) => {
@@ -48,7 +54,7 @@ const Board = ({ tiles }) => {
             className={`tile ${tile.type}`}
             style={position}
           >
-            <table style={{ width: '100%', height:'100%' }}>
+            <table style={{ width: '100%', height: '100%' }}>
               <tbody>
                 {/* 20% 40% 20% 비율로 높이 설정 */}
                 <tr id="construction" style={{ height: '32px' }}>
@@ -69,10 +75,10 @@ const Board = ({ tiles }) => {
                 </tr>
                 <tr id="players" style={{ height: '20px' }}>
                   {/* 빈 박스 */}
-                  <td style={{ width : '25%', backgroundColor: 'lightgray', border: '1px solid black'}}>1p</td>
-                  <td style={{ width : '25%', backgroundColor: 'lightgray', border: '1px solid black'}}>2p</td>
-                  <td style={{ width : '25%', backgroundColor: 'lightgray', border: '1px solid black'}}>3p</td>
-                  <td style={{ width : '25%', backgroundColor: 'lightgray', border: '1px solid black'}}>4p</td>
+                  <td style={{ width: '25%', backgroundColor: 'lightgray', border: '1px solid black' }}>1p</td>
+                  <td style={{ width: '25%', backgroundColor: 'lightgray', border: '1px solid black' }}>2p</td>
+                  <td style={{ width: '25%', backgroundColor: 'lightgray', border: '1px solid black' }}>3p</td>
+                  <td style={{ width: '25%', backgroundColor: 'lightgray', border: '1px solid black' }}>4p</td>
 
                 </tr>
               </tbody>
