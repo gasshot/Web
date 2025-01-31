@@ -2,29 +2,25 @@ import React, { useState } from 'react';
 import Board from '../components/Ex03Board'
 import { Button } from 'react-bootstrap'
 
-
-
-
-
 const Ex03 = () => {
     const [myDice, setMyDice] = useState(1)
     const [comDice, setComDice] = useState(1)
     const [result, setResult] = useState('')
 
-    
-    const makeRandom = ()=>{
+
+    const makeRandom = () => {
         let ran = Math.floor((Math.random() * 6) + 1);	//1~6
-        return ran;       
+        return ran;
     }
 
-    const getResult = (a,b)=>{
-        if(parseInt(a) > parseInt(b)){
+    const getResult = (a, b) => {
+        if (parseInt(a) > parseInt(b)) {
             return '승리'
         }
-        else if (parseInt(a) < parseInt(b)){
+        else if (parseInt(a) < parseInt(b)) {
             return '패배'
         }
-        else if (parseInt(a) === parseInt(b)){
+        else if (parseInt(a) === parseInt(b)) {
             return '무승부'
         }
     }
@@ -35,7 +31,7 @@ const Ex03 = () => {
         setResult('')
     }
 
-    const throwDice = ()=>{
+    const throwDice = () => {
 
         let mine = makeRandom() // 랜덤수
         let computer = makeRandom()
@@ -50,21 +46,21 @@ const Ex03 = () => {
     }
 
     return (
-        <div className="box">
-        <h1>주사위게임</h1>
-        <div>
-          <Button variant="secondary" onClick={throwDice}>던지기!</Button>{" "}
-          <Button variant="danger" onClick={reset}>RESET</Button>
-        </div>
-        <div className="board-container">
-          <Board name={'나'} number={myDice}/>
-          <Board name={'컴퓨터'} number={comDice}/>
-        </div>
+        <div className="box" class='box' align = 'center'>
+            <h1 id='title'>주사위게임</h1>
+            <div>
+                <Button variant="secondary" onClick={throwDice}>던지기!</Button>{" "}
+                <Button variant="danger" onClick={reset}>RESET</Button>
+            </div>
+            <div className="board-container">
+                <Board name={'나'} number={myDice} />
+                <Board name={'컴퓨터'} number={comDice} />
+            </div>
 
-        <div>
-            결과 : {result}
+            <div>
+                결과 : {result}
+            </div>
         </div>
-      </div>
     );
 };
 

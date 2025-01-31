@@ -1,3 +1,11 @@
-.board{
-  align-content: center;
+h1#title{
+  align-self: center;
+
+}
+
+.board-container {
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  gap: 20px; /* 컴포넌트 간 간격 */
+  margin-top: 20px;
 }
