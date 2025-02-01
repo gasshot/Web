@@ -13,6 +13,15 @@ const Ex04 = () => {
     let numList = [1,2,3]
 
 
+    // const click = (event) => {
+    //     console.log(event.target)
+
+    //     let mine = event.target
+        
+    //     console.log(mine.innerText)
+    // }
+
+
     const btnCk = (index) => {
         // 함수 내용 입력
         console.log(index)
