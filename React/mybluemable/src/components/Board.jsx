@@ -2,19 +2,26 @@ import React, { useState } from 'react';
 
 const Board = ({ tiles }) => {
   const [diceValue, setDiceValue] = useState(1); // 주사위 값 상태
-  // const [playerPositions, setPlayerPositions] = useState([0, 0, 0, 0]); // 4명의 플레이어 위치 상태
+  const [playerPositions, setPlayerPositions] = useState([0, 0, 0, 0]); // 4명의 플레이어 위치 상태
 
-  // 주사위 굴림 함수 
-  function rollDice() {
-    console.log("rolled Dice!!");
+  // 플레이어 이동 함수
+  const movePlayer = (diceValue) => {
+    let newPositions = [...playerPositions];
+    newPositions[0] = (playerPositions[0] + diceValue) % 40; // 플레이어 1 위치 업데이트
+    // 예시로 첫 번째 플레이어만 이동
+    setPlayerPositions(newPositions);
+  };
 
-    // 두개 주사위 굴리기
-    let ran1 = Math.floor((Math.random() * 6) + 1);	//1~6
-    let ran2 = Math.floor((Math.random() * 6) + 1);	//1~6
 
-    console.log("현재 현황", ran1, ran2)
-    return setDiceValue(ran1 +ran2);
-  }
+  // 주사위 굴리기 함수
+  const rollDice = () => {
+    const randomValue1 = Math.floor(Math.random() * 6) + 1; // 1부터 6까지 랜덤 숫자 생성
+    const randomValue2 = Math.floor(Math.random() * 6) + 1; // 1부터 6까지 랜덤 숫자 생성
+    setDiceValue(randomValue1 + randomValue2); // 주사위 값을 상태에 저장
+
+    movePlayer(randomValue1 + randomValue2); // 주사위 값에 맞춰 플레이어 이동
+  };
+
 
   // 각 타일의 그리드 위치 계산 함수
   const getTilePosition = (index) => {
@@ -67,25 +74,38 @@ const Board = ({ tiles }) => {
                     </>
                   )}
                 </tr>
-                <tr id="nation" style={{ height: '20px' }}>
+                <tr id="nation" style={{ height: '50%' }}>
                   {/* 국가 이름 표시 */}
                   <td colSpan="4" id="nation" align="center">
                     {tile.name}
                   </td>
                 </tr>
-                <tr id="players" style={{ height: '20px' }}>
-                  {/* 빈 박스 */}
-                  <td style={{ width: '25%', backgroundColor: 'lightgray', border: '1px solid black' }}>1p</td>
-                  <td style={{ width: '25%', backgroundColor: 'lightgray', border: '1px solid black' }}>2p</td>
-                  <td style={{ width: '25%', backgroundColor: 'lightgray', border: '1px solid black' }}>3p</td>
-                  <td style={{ width: '25%', backgroundColor: 'lightgray', border: '1px solid black' }}>4p</td>
-
-                </tr>
               </tbody>
             </table>
+
+
           </div>
         );
       })}
+
+      {/* 플레이어 표시 */}
+      {playerPositions.map((style, index) => (
+        <div
+          key={index}
+          className="player"
+          style={{
+            position: 'absolute',
+            ...style,
+            zIndex: 2, // 타일 위에 렌더링
+            width: '60px', // 말의 크기 (원 크기)
+            height: '60px',
+            backgroundColor: 'red', // 말 색상
+            borderRadius: '50%', // 원 모양
+            border: '3px solid white', // 테두리
+          }}
+        />
+      ))}
+
 
       {/* 주사위 숫자 표시 */}
       <div className="dice" id="diceViewer">{diceValue}</div>

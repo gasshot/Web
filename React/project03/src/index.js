@@ -11,7 +11,15 @@ import './index.css';
 //import App from './example/Ex02'
 
 // 03. MiniGame - 주사위게임!
-import App from './example/Ex03'
+// import App from './example/Ex03'
+
+// 04. useState 랜덤게임
+//import App from './example/Ex04'
+
+
+// ==============================[STEP 02. map 함수 렌더링]===================================
+// 05. map 함수
+import App from './example/Ex05'
 import reportWebVitals from './reportWebVitals';
 
 

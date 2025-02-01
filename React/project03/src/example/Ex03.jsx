@@ -13,14 +13,14 @@ const Ex03 = () => {
         return ran;
     }
 
-    const getResult = (a, b) => {
-        if (parseInt(a) > parseInt(b)) {
+    const getResult = (income1, income2) => {
+        if (income1 > income2) {
             return '승리'
         }
-        else if (parseInt(a) < parseInt(b)) {
+        else if (income1 < income2) {
             return '패배'
         }
-        else if (parseInt(a) === parseInt(b)) {
+        else if (income1 === income2) {
             return '무승부'
         }
     }
