@@ -19,7 +19,11 @@ import './index.css';
 
 // ==============================[STEP 02. map 함수 렌더링]===================================
 // 05. map 함수
-import App from './example/Ex05'
+// import App from './example/Ex05'
+
+// 06. map 함수 실습
+import App from './example/Ex06'
+
 import reportWebVitals from './reportWebVitals';
 
 
