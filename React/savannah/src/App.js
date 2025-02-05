@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 function Login(props) {
   const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState(""); //
   
   return <>
     <h2>로그인</h2>
@@ -39,6 +39,7 @@ function Login(props) {
             }
           });
       }} /></p>
+      <p>난 테스트용이야11</p>
     </div>
 
     <p>계정이 없으신가요?  <button onClick={() => {

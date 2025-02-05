@@ -22,7 +22,7 @@ import './index.css';
 // import App from './example/Ex05'
 
 // 06. map 함수 실습
-import App from './example/Ex06'
+import App from './example/Ex03'
 
 import reportWebVitals from './reportWebVitals';
 
