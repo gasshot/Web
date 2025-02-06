@@ -1,0 +1,69 @@
+{
+    "result": [
+        {
+            "timName": "사바나",
+            "members": [
+                {
+                    "name": "김예은",
+                    "birthYear": 1995,
+                    "rank": "수령"
+                },
+                {
+                    "name": "안지운",
+                    "birthYear": 1999,
+                    "rank": "부조장"
+                },
+                {
+                    "name": "전석현",
+                    "birthYear": 1993,
+                    "rank": "당원"
+                },
+                {
+                    "name": "강인오",
+                    "birthYear": 1991,
+                    "rank": "당원"
+                },
+                {
+                    "name": "김민정",
+                    "birthYear": 1993,
+                    "rank": "당원"
+                },
+                {
+                    "name": "김현웅",
+                    "birthYear": 1999,
+                    "rank": "당원"
+                }
+            ]
+        },
+        {
+            "timName": "다이",
+            "members": [
+                {
+                    "name": "유은주",
+                    "birthYear": 1995,
+                    "rank": "수령"
+                },
+                {
+                    "name": "김도원",
+                    "birthYear": 1999,
+                    "rank": "부조장"
+                },
+                {
+                    "name": "송민지",
+                    "birthYear": 1993,
+                    "rank": "당원"
+                },
+                {
+                    "name": "신성현",
+                    "birthYear": 1991,
+                    "rank": "당원"
+                },
+                {
+                    "name": "이효성",
+                    "birthYear": 1993,
+                    "rank": "당원"
+                }
+            ]
+        }
+    ]
+}

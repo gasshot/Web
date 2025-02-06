@@ -4,7 +4,8 @@ import './index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import App from './components/MyEffect'
+//import App from './components/MyAxios'
+import App from './components/TestOne';
 
 
 

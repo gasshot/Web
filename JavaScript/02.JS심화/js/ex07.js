@@ -10,7 +10,7 @@ btn.addEventListener('click', () => {
         (react에서는) 
     
     fetch(경로)
-    .hen(res => res.json()) // 내가 가져온 응답 결과를 json형태로 파싱
+    .then(res => res.json()) // 내가 가져온 응답 결과를 json형태로 파싱
     
     
     */
