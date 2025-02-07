@@ -1,0 +1,99 @@
+/* Calendar.module.css */
+.calendar {
+    width: 350px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #4a90e2;
+    color: white;
+}
+
+.header button {
+    background-color: white;
+    color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header button:hover {
+    background-color: #f0f0f0;
+}
+
+.header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.days-of-week,
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.days-of-week div {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.daysOfWeek {
+    display: "flex";
+    /* background-color: aqua; */
+    padding: 10px;
+}
+
+.days div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.days div:hover {
+    background-color: #f0f8ff;
+}
+
+.days div.inactive {
+    color: #ccc;
+    pointer-events: none;
+}
+
+.days div.active {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+}
+
+.test {
+    color: rgb(255, 82, 82);
+    width: 50px; 
+    height: 14px;
+    text-align: center;
+    /* border: 1px solid #e0e0e0; */
+    /* border-radius: 5px; */
+    font-size: 14px;
+    /* margin-left: 5px; */
+
+}

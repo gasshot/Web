@@ -1,0 +1,61 @@
+.funcButton{
+
+    width: 300px;
+    height: 100px;
+    background-color: rgb(255, 201, 255);
+    border: '0px solid black';
+}
+.funcButton:hover{
+
+    background-color: rgb(255, 138, 255);
+}
+#changableView{
+    border: '1px solid black';
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    gap: 20px; /* 컴포넌트 간 간격 */
+    margin-top: 20px;
+
+}
+
+/* 캘린더 css */
+/* body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+} */
+.calendar {
+    width: 350px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+.calendar-header {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    padding: 10px;
+}
+.day {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.day-header {
+    background: #007bff;
+    color: white;
+}
