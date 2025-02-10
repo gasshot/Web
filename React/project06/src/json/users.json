@@ -1,0 +1,17 @@
+[
+    {
+        "id": "강인오",
+        "password": "123",
+        "nickname": "캉스"
+    },
+    {
+        "id": "전석현",
+        "password": "456",
+        "nickname": "전스"
+    },
+    {
+        "id": "김현웅",
+        "password": "789",
+        "nickname": "김스"
+    }
+]

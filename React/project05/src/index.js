@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-//import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-
-import App from './components/MyAxios'
-//import App from './components/TestOne';
-//import App from './components/MyInput';
-
-
+import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-    <App />
+    // App 컴포넌트에서 Router기능을 사용할 수 있게끔 허용
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+
 
 );
 

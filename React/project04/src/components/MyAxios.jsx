@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'// 비동기 통신 라이브러리
 const MyAxios = () => {
     // const activeButton = () => {
@@ -12,6 +12,8 @@ const MyAxios = () => {
 
     const [outcome, setOutCome] = useState([])
     const [inputText, setInputText] = useState("");
+    const inputRef = useRef();
+    const [firstCheck, setFirstCheck] = useState(false);
     //20200101
     function getData(date) {
 
@@ -26,12 +28,12 @@ const MyAxios = () => {
 
         axios({
             // https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=19d4541a6600c594a5c2f6e2b0d6c8de&targetDt=20200101
-            url: `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=19d4541a6600c594a5c2f6e2b0d6c8de&targetDt=${date}`, // 통신을 시도할 주소
+            url: `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=dfe54a669ee316c31c4bcdf9b33b8a7f&targetDt=${date}`, // 통신을 시도할 주소
             method: "GET"
         })
             .then(res => {
                 // res
-                //console.log('데이터', res.data);  // 응답 데이터가 res.data에 들어옴
+                console.log('데이터', res.data);  // 응답 데이터가 res.data에 들어옴
                 setOutCome(res.data.boxOfficeResult.dailyBoxOfficeList)
                 alert("통신 성공!");
 
@@ -42,12 +44,23 @@ const MyAxios = () => {
             });
         //then -> 통신 성공시 실행할 로직
     }
+
     useEffect(() => {
+        if (!firstCheck) {
+            setFirstCheck(true)
+            getData('20200101')
+            console.log('최초시작')
+            return
+        }
+    }, [firstCheck])
+
+
+
+    useEffect(() => {
+
         if (inputText.length === 8) {
             getData(inputText)
         }
-
-
     }, [inputText])
 
     return (
@@ -76,6 +89,7 @@ const MyAxios = () => {
                 placeholder="text"
                 onChange={(e) => setInputText(e.target.value)}
             />
+            {/* <input ref = {inputRef} /> */}
         </div>
     )
 }
