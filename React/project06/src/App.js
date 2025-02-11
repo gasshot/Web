@@ -1,20 +1,29 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import Main from './components/Main.jsx'
-import Login from './components/Login.jsx'
-import Join from './components/Join.jsx'
-import ToDoList from './components/ToDoList.jsx'
+import Main from './components/Main';
+import Login from './components/Login';
+import Join from './components/Join';
+import { Route, Routes } from 'react-router-dom'
+import { createContext, useState } from 'react';
+import ToDoList from './components/ToDoList.jsx';
+
+//createContext : 공유 저장소 생성 기능
+export const AppData = createContext();
 
 function App() {
+  const [id, setId] = useState(""); // 초기값을 빈 문자열로 설정
+
   return (
     <div className="App">
-      <Routes>
-        <Route path='/' element={<Main></Main>}></Route>
-        {/* Route를 사용해 '/about' 이란 주소를 About 컴포넌트에 대응 */}
-        <Route path='/login' element={<Login></Login>}></Route>
-        <Route path='/join' element={<Join></Join>}></Route>
-        <Route path='/toDoList' element={<ToDoList></ToDoList>}></Route>
-      </Routes>
+      {/* 공유 저장소 허용 */}
+      {/* value : 공유할 값 */}
+      <AppData.Provider value={{ id: id, set: setId }}>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/join" element={<Join />} />
+          <Route path="/toDoList" element={<ToDoList />} />
+        </Routes>
+      </AppData.Provider>
     </div>
   );
 }

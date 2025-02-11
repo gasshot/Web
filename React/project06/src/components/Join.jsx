@@ -43,27 +43,14 @@ export const Join = () => {
         <div>
             <h1>절거운 React 수업</h1>
             <h1>회원가입 페이지입니다</h1>
-
-            <table>
-                <tr>
-                    <span>ID : <input type="text" onChange={(e)=>{getNewUserID(e.target.value)}} /></span>
-                </tr>
-                <tr>
-                    <span>PW : <input type="text" onChange={(e)=>{getNewUserPW(e.target.value)}}/></span>
-                </tr>
-                <tr>
-                    <span>NICK : <input type="text" onChange={(e)=>{getNewUserNick(e.target.value)}}/></span>
-                </tr>
-                <tr>
-                    <button onClick={JoinFunc}>JOIN</button>
-                    <button>초기화</button>
-                </tr>
-            </table>
-
-
-
-
-
+            <span>ID : <input type="text" onChange={(e)=>{getNewUserID(e.target.value)}} /></span>
+            <br />
+            <span>PW : <input type="text" onChange={(e)=>{getNewUserPW(e.target.value)}}/></span>
+            <br />  
+            <span>NICK : <input type="text" onChange={(e)=>{getNewUserNick(e.target.value)}}/></span>
+            <br />
+            <button onClick={JoinFunc}>JOIN</button>
+            <button>초기화</button>
         </div>
     )
 }
