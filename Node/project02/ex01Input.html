@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- form태그 : 웹페이지(클라이언트)에서 입력한 데이터를 
+                    서버로 한번에 묶어서 전송할 때 사용되는 태그 
+                    
+        action 속성 : 어디 서버로 보낼껀지?(서버 주소 정의)
+        method 속성 : 전송 방식 설정해준다(GET,POST)
+        
+        HTML에서 사용자와 상호작용할 수 있는 입력 양식을 정의하는 태그입니다. 
+        로그인 창이나 회원가입 폼 
+    -->
+    <form action="http://localhost:5003" method="">
+        ID : <input id="idBox" name="inputID">
+        <br>
+        PW : <input id="pwBox" name="inputPW">
+        <br>
+        <button type="submit">로그인 시도</button> 
+        <!-- 버튼의 기본 타입은 submit 
+        button 태그가 form태그 안에 있으면
+        기본 type은 submit이다
+
+        button 태그가 form태그 밖에 있으면
+        기본 type은 button이다
+        -->
+    </form>
+
+    <script src="./"></script>
+</body>
+
+</html>
