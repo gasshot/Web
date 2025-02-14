@@ -14,13 +14,15 @@ const router = express.Router();
 app.use(router)
 
 //http://localhost:5027
-router.get('/',()=>{
+router.get('/',(request, response)=>{
 
     console.log('Main 접속')
+    response.end()
 })
 //http://localhost:5027/test
-router.get('/test',()=>{
+router.get('/test',(request, response)=>{
     console.log('test 접속')
+    response.end()
 })
 
 // 서버실행
