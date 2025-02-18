@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>로그인 페이지 입니다</h1>
+  <!-- get방식의 데이터 처리  -->
+  <h2>Get방식 로그인</h2>
+  <form action="/getlogin" method="get">
+    id : <input type="text" name="id" placeholder="아이디를 입력하세요" /> pw
+    : <input type="password" name="pw" placeholder="비밀번호를 입력하세요" />
+    <input type="submit" value="로그인" />
+  </form>
+  <!-- post방식의 데이터 처리-->
+  <h2>post방식 로그인</h2>
+  <form action="/postlogin" method="post">
+    id : <input type="text" name="id" placeholder="아이디를 입력하세요" /> pw
+    : <input type="password" name="pw" placeholder="비밀번호를 입력하세요" />
+    <input type="submit" value="로그인" />
+  </form>
+</body>
+
+</html>

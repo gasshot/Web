@@ -5,9 +5,20 @@
     background-color: rgb(255, 201, 255);
     border: '0px solid black';
 }
+.funcButton_auth{
+    width: 300px;
+    height: 100px;
+    background-color: rgb(90, 147, 255);
+    border: '0px solid black';
+
+}
 .funcButton:hover{
 
     background-color: rgb(255, 138, 255);
+}
+.funcButton_auth:hover{
+
+    background-color: rgb(14, 98, 255);
 }
 #changableView{
     border: '1px solid black';

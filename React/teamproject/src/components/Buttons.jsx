@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Buttons = ({name, func}) => {
+const Buttons = ({name, func,auth = false}) => {
     return (
         <div >
-            <button class='funcButton' onClick={func}>{name}</button>
+            <button class={auth == true ? 'funcButton_auth':'funcButton'} onClick={func}>{name}</button>
         </div>
     )
 }

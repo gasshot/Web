@@ -10,7 +10,7 @@ const express = require('express')
 const app = express();
 // 미들웨어 생성
 const router = express.Router();
-// a미들웨어 서버 적용(등록)
+// 미들웨어 서버 적용(등록)
 app.use(router)
 
 //http://localhost:5027

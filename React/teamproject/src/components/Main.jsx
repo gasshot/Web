@@ -28,11 +28,11 @@ const Main = () => {
                     <Buttons name={'메인'} func={() => { setTextValue(<Calendar />) }} />
                     <Buttons name={'작은달력'} func={() => { setTextValue('작은달력') }} />
                     <Buttons name={'할일'} func={() => { setTextValue('할 일') }} />
-                    <Buttons name={'기능3'} func={() => { setTextValue('기능3') }} />
-                    <Buttons name={'기능4'} func={() => { setTextValue('기능4') }} />
-                    <Buttons name={'기능5'} func={() => { setTextValue('기능5') }} />
-                    <Buttons name={'근태'} func={() => { setTextValue('근태') }} />
-                    <Buttons name={'기능7'} func={() => { setTextValue('기능7') }} />
+                    <Buttons name={'(임시)때쓰기'} func={() => { setTextValue('기능3') }} />
+                    <Buttons name={'(임시)삭제예정'} func={() => { setTextValue('기능4') }} />
+                    <Buttons name={'스케줄 생성'} func={() => { setTextValue('스케줄 생성') }} auth = {true}/>
+                    <Buttons name={'관리하기'} func={() => { setTextValue('관리하기') }} auth = {true}/>
+                    <Buttons name={'통계 및 분석'} func={() => { setTextValue('통계 및 분석')}}  auth = {true} />
                 </div>
                 <div id='changableView'>
                     <div>
