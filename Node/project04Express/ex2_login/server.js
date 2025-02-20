@@ -5,6 +5,9 @@ app.use(express.static(__dirname + "/public"));
 
 // app이라는 서버가 패킷의 body 영역을 사용할 수 있게끔 설정
 app.use(express.urlencoded({extended : true}))
+app.use(express.json())
+
+
 app.get('/', (request, response) => {
     console.log('메인서버 실행!');
     // 기존 방식 -> res를 통해서 writehead, write, end로 사용했다.
@@ -85,3 +88,12 @@ app.post('/postlogin', (request, response) => {
 
 
 app.listen(5036);
+
+
+/*
+    get vs post
+    공통점 : 클라이언트가 서버에서 데이터를 보낼 때 선정하는 방법
+    차이점 : get ->  데이터를 url에 동반해서 보낸다 / post -> 데이터를 숨겨서 보낸다.
+    사용처 : get -> 데이터베이스에 영향을 주지 않는 경우 / post -> 데이터베이스에 영향을 주는 경우
+    
+*/

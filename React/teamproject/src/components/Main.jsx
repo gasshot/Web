@@ -32,7 +32,7 @@ const Main = () => {
                     <Buttons name={'작은달력'} func={() => { setTextValue('작은달력'); }} />
                     <Buttons name={'할일'} func={() => { setTextValue('할 일'); }} />
                     <Buttons name={'(임시)때쓰기'} func={() => { setTextValue('기능3'); }} />
-                    <Buttons name={'(임시)삭제예정'} func={() => { setTextValue('기능4'); }} />
+                    {/* <Buttons name={'(임시)삭제예정'} func={() => { setTextValue('기능4'); }} /> */}
 
                     {check && (
                         <>
