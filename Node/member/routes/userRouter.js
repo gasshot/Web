@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const conn = require("../config/db")
-const path = require("path")
+const path = require("path");
+const { request } = require('http');
 const publicPath = path.join(__dirname,"../public/")
 /*
     DB와 열결할 때 작성할 프로세스
@@ -37,6 +38,44 @@ router.post("/join", (request, response) => {
     });
 })
 
+router.post("/login",(request , response)=>{
+    let {id,pw} = request.body;
+    console.log(id,pw);
+    let sql = "select * from member where id = ? and pw = ?";
+
+    conn.query(sql, [id, pw], (error, result) => {
+        console.log("실행결과 : ", result);
+
+        // select문은 리턴결과가 리스트 형태로 반환 -> 데이터가 있으면 리스트의 길이가 0보다 크다
+
+        if(result?.length > 0){
+            response.redirect("/")
+        }
+        else{
+            response.redirect("/login")
+        }
+    });
+})
+
+router.post("/delete",(request , response)=>{
+    let {id,pw} = request.body;
+    console.log(id,pw);
+    let sql = "delete from member where id = ? and pw = ?"
+
+    conn.query(sql, [id, pw], (error, result) => {
+        console.log("실행결과 : ", result);
+
+        // select문은 리턴결과가 리스트 형태로 반환 -> 데이터가 있으면 리스트의 길이가 0보다 크다
+
+        if(result?.affectedRows > 0){
+            response.redirect("/")
+        }
+        else{
+            response.redirect("/delete")
+        }
+    });
+})
+
 
 module.exports = router;
 
@@ -56,5 +95,7 @@ module.exports = router;
     * 프로세스 정리
         1) 리액트에서 axios, fetch등 비동기 통신을 활용해서 데이터를 보내기 or 요청 * url적는 공간 -> 라우터
         2) 노드는 받은 데이터를 처리하고 DB에 연결한다.
-        3) 
+        3) 가져온 데이터를 리액트로 보내준다.(res.json);
+            ex) 로드인 성공 시 -> res.json(result : true);
+                로그인 실패 시 -> res.json(result : false)
 */

@@ -17,6 +17,18 @@ router.get("/join",(request,response)=>{
 
 })
 
+router.get("/login",(request,response)=>{
+
+    response.sendFile(path.join(publicPath + "login.html"))
+
+})
+
+router.get("/delete",(request,response)=>{
+
+    response.sendFile(path.join(publicPath + "delete.html"))
+
+})
+
 
 
 
