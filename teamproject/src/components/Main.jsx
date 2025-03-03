@@ -26,6 +26,7 @@ const Main = () => {
                     />
                 </span>
             </div>
+            <hr />
             <div style={{ display: 'flex' }}>
                 <div id='buttonGroup'>
                     <Buttons name={'메인'} func={() => { setTextValue(<Calendar />); }} />
