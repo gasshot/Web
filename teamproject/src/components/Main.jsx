@@ -1,41 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+//import axios from 'axios';
 import Buttons from './Buttons';
 import Calendar from './Calendar';
+import Attendance from './Attendance';
 import '../App.css';
 
 const Main = () => {
 
     const [textValue, setTextValue] = useState('메인화면');
-    const check = true; // You can toggle this value to see the conditional rendering in action
+    const [account, setAccount] = useState({ name: '', role: '' }) // 계정의 정보를 가져오기
+    //const check = true; // You can toggle this value to see the conditional rendering in action
+
+    useEffect(() => {
+        const fetchAccount = async () => {
+            try {
+                const response = await fetch('/api/account'); // 서버에서 계정 정보 요청
+                if (!response.ok) throw new Error('Failed to fetch account data');
+                const data = await response.json();
+                setAccount(data); // 계정 정보 업데이트
+            } catch (error) {
+                console.error('Error fetching account data:', error);
+                setAccount({ name: '김예은', role: '관리자' })
+            }
+        };
+
+        fetchAccount();
+    }, []); // 빈 배열 -> 컴포넌트가 처음 렌더링될 때만 실행
 
     return (
         <div>
             <div id='profile'>
                 <span id='logo'>
-                    <h2>savannah</h2>
+                    SAVANNAH
                 </span>
-                <span>
-                    <h1 id='welcome'>환영합네다. 김예은 수령님!(관리자)</h1>
-                </span>
-                <span>
-                    <img
-                        id='picture'
-                        src="" 
-                        alt="ㅋㅋ"
-                        onClick={() => console.log('프로파일 클릭 설정창')}
-                    />
-                </span>
+                <div id = "account">
+                    <span>
+                        <h3 id='welcome'>환영합니다. {account.name}님!({account.role})</h3>
+                    </span>
+                    <span>
+                        <img
+                            id='picture'
+                            src={account.imageUrl || null}
+                            alt="알림"
+                            onClick={() => console.log('알림 클릭')}
+                        />
+                    </span>
+                    <span>
+                        <img
+                            id='picture'
+                            src={account.imageUrl || null}
+                            alt="증명사진"
+                            onClick={() => console.log('프로파일 클릭 설정창')}
+                        />
+                    </span>
+                </div>
+
             </div>
             <hr />
             <div style={{ display: 'flex' }}>
                 <div id='buttonGroup'>
                     <Buttons name={'메인'} func={() => { setTextValue(<Calendar />); }} />
                     <Buttons name={'작은달력'} func={() => { setTextValue('작은달력'); }} />
-                    <Buttons name={'할일'} func={() => { setTextValue('할 일'); }} />
-                    <Buttons name={'(임시)때쓰기'} func={() => { setTextValue('기능3'); }} />
-                    {/* <Buttons name={'(임시)삭제예정'} func={() => { setTextValue('기능4'); }} /> */}
+                    <Buttons name={'할일'} func={() => { setTextValue(<Attendance />); }} />
+                    <Buttons name={'요청하기'} func={() => { setTextValue('요청하기'); }} />
 
-                    {check && (
+                    {account.role === "관리자" && (
                         <>
                             <Buttons name={'스케줄 생성'} func={() => { setTextValue('스케줄 생성'); }} auth={true} />
                             <Buttons name={'관리하기'} func={() => { setTextValue('관리하기'); }} auth={true} />
@@ -44,9 +73,7 @@ const Main = () => {
                     )}
                 </div>
                 <div id='changableView'>
-                    <div>
-                        <h1>{textValue}</h1>
-                    </div>
+                    {textValue}
                 </div>
             </div>
         </div>

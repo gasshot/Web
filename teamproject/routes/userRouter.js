@@ -1,6 +1,6 @@
 const express = require('express');
 const userRouter = express.Router();
-//const conn = require("../config/db")
+const conn = require("../config/db")
 const path = require("path");
 const { request } = require('http');
 const publicPath = path.join(__dirname,"../public/")
@@ -17,7 +17,7 @@ userRouter.post("/join", (request, response) => {
     // 클라이언트가 넘겨준 데이터를 활용해서 DB에 넣어주는 작업
     // 1. 데이터 저장
     let { id, pw, nick } = request.body;
-    return
+    //return
     // 2. sql문 작성
     let sql = "insert into member(id,pw,nick) values(?,?,?)";
     // 3. 쿼리문 실행
@@ -42,17 +42,18 @@ userRouter.post("/login",(request , response)=>{
     console.log(request.body)
     let {id,pw} = request.body;
     let sql = "select * from member where id = ? and pw = ?";
-    return
+    //return
     conn.query(sql, [id, pw], (error, result) => {
         console.log("실행결과 : ", result);
 
         // select문은 리턴결과가 리스트 형태로 반환 -> 데이터가 있으면 리스트의 길이가 0보다 크다
 
         if(result?.length > 0){
-            response.redirect("/")
+            response.redirect("/system")
         }
         else{
-            response.redirect("/login")
+            console.log("실패")
+            response.redirect("/")
         }
     });
 })
@@ -61,7 +62,7 @@ userRouter.post("/delete",(request , response)=>{
     console.log(request.body)
     let {id,pw} = request.body;
     let sql = "delete from member where id = ? and pw = ?"
-    return
+    //return
     conn.query(sql, [id, pw], (error, result) => {
         console.log("실행결과 : ", result);
 

@@ -19,7 +19,7 @@ const mainRouter = require('./routes/mainRouter.js');
 app.use('/', mainRouter);  // 메인 페이지 처리
 
 const subRouter = require('./routes/subRouter.js');
-app.use('/esports', subRouter);  // 서브 페이지는 /esports로 처리
+app.use('/system', subRouter);  // 서브 페이지는 /esports로 처리
 
 const userRouter = require('./routes/userRouter.js');
 app.use('/user', userRouter);  // 서브 페이지는 /esports로 처리

@@ -59,7 +59,7 @@ const Calendar = () => { // 현 컴포넌트의 함수실행
                 <div
                     key={day}
                     className={styles.active}
-                    onClick={()=>console.log(`${day}`)}
+                    onClick={() => console.log(`${day}`)}
                 >
                     {day}
                 </div>
@@ -81,6 +81,10 @@ const Calendar = () => { // 현 컴포넌트의 함수실행
 
     return (
         <div className={styles.calendar}>
+            <div className={styles.calendarChanges}>
+                <span className={styles.monthBtn}>월간</span>
+                <span className={styles.weekBtn}>주간</span>
+            </div>
             <div className={styles.header}>
                 <button onClick={() => changeMonth(-1)}>◀</button>
                 <h2>
