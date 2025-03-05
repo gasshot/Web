@@ -4,6 +4,7 @@ import AttTodayPlan from "./AttTodayPlan"
 import AttWorktime from "./AttWorktime"
 import AttVacation from "./AttVacation"
 import AttTodayCheck from "./AttTodayCheck"
+import AttAlert from "./AttAlert"
 
 
 const Attendance = () => {
@@ -48,7 +49,7 @@ const Attendance = () => {
         <div>
           <span><img src="#" alt="경고" /></span>
           <span>경고</span>
-          <AttTodayPlan />
+          <AttAlert />
         </div>
       </div>
     </div>

@@ -1,0 +1,80 @@
+- Primitive Type(원시 타입)
+
+- 정수형(4)
+. byte    ... 8 bit(작은수) , 2^8 = 256 (-128 ~ -1, 0 ~ 127)
+. short   ... 16 bit(큰수)
+. int     ... 32 bit(더큰수)
+. long    ... 64 bit(더더큰수)
+
+- 실수형(2)
+. float   ... 32 bit(작은수)
+. double  ... 64 bit(큰수)
+
+- 문자형(1)
+. char    ... 16 bit 유니코드(작은수)
+
+- 불린형(1)
+. boolean    ... 1 bit (true : 1, false : 0)
+
+
+----------------------------------------------
+'속성' + '기능'까지 포함된 객체는 클래스
+
+
+(1) 사용자 정의 클래스(user-defined class)
+
+public class Student{
+    private String name; // 클래스 속성: 멤버필드: Property
+    private int age;
+
+
+    public Student(String name, int age) // 클래스 생성자
+    {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void setNam(String name){ // 클래스 메서드
+
+    } 
+}
+
+* 추상클래스(Abstract Class)
+
+. 구기종목 : 축구/야구/농구/배구/탁구
+. 가전제품 : TV/냉장고/세탁기/전자렌지
+. 모양    : 세모/네모/동그라미/마름모
+. 병      : 술병/물병/꽃병/유리병/플라스틱병
+----------------------------------------------
+
+class C extends A 상속(중복상속은 불가, 파이썬은 중복상속 가능)
+
+----------------------------------------------
+. 인터페이스(interface)
+
+public interface Television{
+    public void On();
+    public void Off();
+    public void SwitchChannel(int channel);
+}
+----------------------------------------------
+* 인스턴스(instance) : 객체를 토대로 만든 존재, 실체
+
+Student s1 = new Student();
+Human h1 = new Human();  x // Human이 인터페이스라면 생성할 수 없다.
+Boy h1 = new Boy();
+Human h2 = new Boy();
+
+
+public void talk() // 함수 선언부
+{ 
+
+} // 함수 구현부
+
+* Reference Type(참조타입)이란? 클래스/추상클래스/인터페이스 등등
+
+학생 --> Student.java ---> class ---> JVM ---> Java Runtime Data Area
+
+int a = 10 // 로컬변수
+Student s1 = new Student() // 참조변수 s1에 인스턴스-Student()가 할당됨.
+
